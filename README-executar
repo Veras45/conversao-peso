@@ -1,0 +1,11 @@
+# Criar a imagem com o comando abaixo dentro da pasta ConversaoPeso.web
+docker image build -t maquinario/conversao-peso:v1 .  
+
+# Criar o Container com o comando abaixo dentro da pasta ConversaoPeso.web
+docker container run -d -p 8080:8080 --name conversao-peso maquinario/conversao-peso:v1 docker tag 
+
+" Docker Image ls " para validar se a imagem foi criada 
+
+" Docker Container ls "  para validar se a Container foi criada 
+
+Acesse o Link http://localhost:8080/ 

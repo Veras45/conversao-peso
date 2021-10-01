@@ -1,11 +1,21 @@
 # Criar a imagem com o comando abaixo dentro da pasta ConversaoPeso.web
-docker image build -t maquinario/conversao-peso:v1 .  
+docker image build -t veras45/conversao-peso:v3 .  
 
 # Criar o Container com o comando abaixo dentro da pasta ConversaoPeso.web
-docker container run -d -p 8080:8080 --name conversao-peso maquinario/conversao-peso:v1 docker tag 
+docker container run -d -p 8080:8080 --name conversao-peso veras45/conversao-peso:v3 docker tag 
 
 " Docker Image ls " para validar se a imagem foi criada 
 
 " Docker Container ls "  para validar se a Container foi criada 
 
 Acesse o Link http://localhost:8080/ 
+
+para usar com o K8S acesse a pasta k8s, apos subir a build usando a image que estiver no seu docker hub, modifique no deploymente sua imagem, e ai rode o comando a seguir 
+
+kubectl apply -f deployment.yaml
+
+valide se foi criado usando 
+
+kubectl get pods ou kubectl get all 
+
+apos isso sua aplicacao ja vai esta no ar! 
